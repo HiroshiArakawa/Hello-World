@@ -5,9 +5,9 @@ info:
   version: 0.0.0
 servers:
   - url: https://example.com/api/v0
-    description: プロダクション API
+    description: production API
   - url: http://{host}:{port}/api/v0
-    description: 開発用
+    description: for development
     variables:
       host:
         default: localhost
@@ -17,11 +17,11 @@ paths:
   /health:
     get:
       operationId: openapitutorial.controller.health.call
-      summary: サーバーの状態を返します
-      description: サーバーの状態を返します。
+      summary: return server's status
+      description: return server's status
       responses:
         '200':
-          description: サーバーは正常に動作しています
+          description: server is working properly
           content:
             application/json:
               schema:
@@ -29,7 +29,7 @@ paths:
 components:
   schemas:
     get_health_response:
-      description: サーバーの状態のレスポンス
+      description: response for server status
       type: object
       properties:
         status:
